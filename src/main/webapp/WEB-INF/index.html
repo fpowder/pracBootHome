@@ -19,7 +19,7 @@
         console.log(isaacCSPRNG().random());
 
         var min = 5;
-        let max = 10;
+        var max = 10;
 
         for(var i = 0; i < 5; i++){
             console.log(_.random(min, max));
@@ -32,7 +32,10 @@
         console.log(isaacCSPRNG().random("test"));
 
 
-        console.log("Math.seedrandom() :"+Math.seedrandom("s"));
+        console.log("Math.seedrandom() :" + Math.seedrandom("s"));
+
+        var today = new Date();
+        console.log(today.getTime());
 
     });
 

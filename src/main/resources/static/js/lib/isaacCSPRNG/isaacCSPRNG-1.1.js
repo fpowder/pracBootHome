@@ -34,10 +34,13 @@ isaacCSPRNG = function( specifiedSeed ){
 
         var internalSeed
             , uinta = new Uint32Array( 2 )
-            , defaultInternalSeed = new Array()
-        ;
-        var crypto = window.crypto || window.msCrypto;
-        crypto.getRandomValues( uinta );
+            , defaultInternalSeed = new Array();
+
+        uinta[0] = new Date().getTime();
+        uinta[1] = new Date().getTime()+1
+
+        //|| window.crypto.getRandomValues( uinta ) || window.msCrypto.getRandomValues( uinta );
+
         defaultInternalSeed = uinta[ 0 ] + uinta[ 1 ];
 
         internalSeed = userSeed || defaultInternalSeed;
