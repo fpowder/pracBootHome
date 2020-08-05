@@ -5,7 +5,38 @@
     <title>Title</title>
 </head>
 <script type="text/javascript" src="/js/lib/jquery-1.9.1.min.js" ></script>
+<script type="text/javascript" src="/js/lib/isaacCSPRNG/isaacCSPRNG-1.1.js" ></script>
+<script type="text/javascript" src="/js/lib/underscore.js" ></script>
+<script type="text/javascript" src="/js/lib/backbone-min.js" ></script>
+<script type="text/javascript" src="/js/lib/seedrandom.min.js" ></script>
 <script type="text/javascript" src="/js/index.js"></script>
+<script type="text/javascript">
+
+    $(function(){
+
+        var prng0 = isaacCSPRNG();
+        console.log('isaacCSPRNG random()');
+        console.log(isaacCSPRNG().random());
+
+        var min = 5;
+        let max = 10;
+
+        for(var i = 0; i < 5; i++){
+            console.log(_.random(min, max));
+        }
+
+        console.log(isaacCSPRNG().random("test"));
+        console.log(isaacCSPRNG().random("test"));
+        console.log(isaacCSPRNG().random("test"));
+        console.log(isaacCSPRNG().random("test"));
+        console.log(isaacCSPRNG().random("test"));
+
+
+        console.log("Math.seedrandom() :"+Math.seedrandom("s"));
+
+    });
+
+</script>
 <body>
 jesus!
 </body>

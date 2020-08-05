@@ -23,6 +23,7 @@ public class ApplicationConfig implements WebMvcConfigurer {
                 .addResourceHandler("/js/**")
                 .addResourceLocations("classpath:/static/js/")
                 .setCachePeriod(10);
+
     }
 
     @Bean
