@@ -4,4 +4,5 @@ $(function(){
     console.log('isaacCSPRNG random()');
     console.log(prng0.random());*/
 
+    console.log('for commit');
 });
