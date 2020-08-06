@@ -5,7 +5,7 @@
     <title>Title</title>
 </head>
 <script type="text/javascript" src="/js/lib/jquery-1.9.1.min.js" ></script>
-<script type="text/javascript" src="/js/lib/isaacCSPRNG/isaacCSPRNG-1.1.js" ></script>
+<script type="text/javascript" src="/js/lib/isaacCSPRNG/isaacCSPRNG-1.1.min.js" ></script>
 <script type="text/javascript" src="/js/lib/underscore.js" ></script>
 <script type="text/javascript" src="/js/lib/backbone-min.js" ></script>
 <script type="text/javascript" src="/js/lib/seedrandom.min.js" ></script>
@@ -25,11 +25,11 @@
             console.log(_.random(min, max));
         }
 
-        console.log(isaacCSPRNG().random("test"));
-        console.log(isaacCSPRNG().random("test"));
-        console.log(isaacCSPRNG().random("test"));
-        console.log(isaacCSPRNG().random("test"));
-        console.log(isaacCSPRNG().random("test"));
+        console.log(isaacCSPRNG().random());
+        console.log(isaacCSPRNG().random());
+        console.log(isaacCSPRNG().random());
+        console.log(isaacCSPRNG().random());
+        console.log(isaacCSPRNG().random());
 
 
         console.log("Math.seedrandom() :" + Math.seedrandom("s"));
