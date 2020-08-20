@@ -39,16 +39,11 @@ isaacCSPRNG = function( specifiedSeed ){
         uinta[0] = new Date().getTime();
         uinta[1] = new Date().getTime()+1;
 
-        //|| window.crypto.getRandomValues( uinta ) || window.msCrypto.getRandomValues( uinta );
-
         defaultInternalSeed = uinta[ 0 ] + uinta[ 1 ];
 
         internalSeed = userSeed || defaultInternalSeed;
 
-        seed( internalSeed ); 
-        ////////////////////////////////////////////////////
-
-
+        seed( internalSeed );
 
         /* private: 32-bit integer safe adder */
         function _add( x, y ) {
@@ -58,7 +53,6 @@ isaacCSPRNG = function( specifiedSeed ){
 
             return ( msb << 16 ) | ( lsb & 0xffff );
         };
-
 
 
         /* private:  return data converted from hex string */
