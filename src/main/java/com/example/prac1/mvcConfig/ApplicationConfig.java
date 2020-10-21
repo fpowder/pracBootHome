@@ -20,9 +20,15 @@ public class ApplicationConfig implements WebMvcConfigurer {
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry
+            .addResourceHandler("/src/main/webapp/pluginfree/**")
+            .addResourceLocations("classpath:/pluginfree/js/")
+            .setCachePeriod(10);
+        registry
                 .addResourceHandler("/js/**")
                 .addResourceLocations("classpath:/static/js/")
                 .setCachePeriod(10);
+
+
 
     }
 

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="WebApp_ID" version="2.4"
+	xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+	<display-name>com.nprotect.pluginfree.v1.5.0</display-name>
+	<distributable/>
+	
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+	<resource-ref>
+		<description>
+			Resource reference to a factory for java.sql.Connection
+			instances that may be used for talking to a particular
+			database that is configured in the server.xml file.
+		</description>
+		<res-ref-name>jdbc/nppfs</res-ref-name>
+		<res-type>javax.sql.DataSource</res-type>
+		<res-auth>Container</res-auth>
+	</resource-ref>
+
+
+	<filter>
+		<filter-name>PluginFreeFilter</filter-name>
+		<filter-class>com.nprotect.pluginfree.PluginFreeFilter</filter-class>
+		<!--
+		<init-param>
+			<param-name>PropertiesPath</param-name>
+			<param-value>%WEB-INF%/properties/nprotect.properties</param-value> 
+		</init-param>
+		<init-param>
+			<param-name>PropertiesPath</param-name>
+			<param-value>D:\DEV - Eclipse\DEV - NOS Plugin Free Service\com.nprotect.pluginfree.v1.2.0\WebContent\WEB-INF\classes\nprotect.properties</param-value> 
+		</init-param>
+		-->
+		<init-param>
+			<param-name>RequestEncoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+<!-- 
+		<init-param>
+			<param-name>ExcludePattren</param-name>
+			<param-value>
+			</param-value>
+		</init-param>
+		<init-param>
+			<param-name>ExcludeEncoding</param-name>
+			<param-value>
+			</param-value>
+		</init-param>
+ -->
+		<!-- 특정한 페이지에 인코딩을 별도로 설정해야 할 경우 -->
+<!-- 
+		<init-param>
+			<param-name>PageCharset</param-name>
+			<param-value>
+				EUC-KR, EUC-JP
+			</param-value>
+		</init-param>
+		<init-param>
+			<param-name>PageCharset-EUC-KR</param-name>
+			<param-value>
+				/kr/*
+			</param-value>
+		</init-param>
+		<init-param>
+			<param-name>PageCharset-EUC-JP</param-name>
+			<param-value>
+				/jp/*
+			</param-value>
+		</init-param>
+ -->
+	</filter>
+
+	<filter-mapping>
+		<filter-name>PluginFreeFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<!-- nProtect Online Security, Plugin Free Filter : INCA Internet Co., Ltd. END -->
+
+	<!-- json-lib-2.4-jdk15.jar, commons-lang 2.5, commons-beanutils 1.8.0, 
+		commons-collections 3.2.1, commons-logging 1.1.1, ezmorph 1.0.6 필요 -->
+	<!-- json-simple-1.1.1.jar 필요 -->
+	<!-- <filter> <filter-name>MGGeneralInsJsonFilter</filter-name> <filter-class>com.nprotect.pluginfree.extension.MGGeneralInsJsonFilter</filter-class> 
+		<init-param> <param-name>DebugMode</param-name> <param-value>true</param-value> 
+		</init-param> </filter> <filter-mapping> <filter-name>MGGeneralInsJsonFilter</filter-name> 
+		<url-pattern>/*</url-pattern> </filter-mapping> -->
+
+
+	<!-- besoft-safeonDecrypt-jdk15.jar, besoft-vkmodule-sc-jdk15.jar 필요 -->
+	<!-- <filter> <filter-name>SamsungCardBesoftFilter</filter-name> <filter-class>com.nprotect.pluginfree.extension.SamsungCardBesoftFilter</filter-class> 
+		<init-param> <param-name>DebugMode</param-name> <param-value>true</param-value> 
+		</init-param> </filter> <filter-mapping> <filter-name>SamsungCardBesoftFilter</filter-name> 
+		<url-pattern>/*</url-pattern> </filter-mapping>
+	 -->
+
+	<!-- jackson-core-2.2.4.jar, jackson-annotations-2.2.3.jar, jackson-databind-2.2.4.jar 필요 -->
+	<!-- <filter> <filter-name>SamsungCardJsonFilter</filter-name> <filter-class>com.nprotect.pluginfree.extension.SamsungCardJsonFilter</filter-class> 
+		<init-param> <param-name>RequestEncoding</param-name> <param-value>UTF-8</param-value> 
+		</init-param> <init-param> <param-name>E2ENodeName</param-name> <param-value>e2eVO</param-value> 
+		</init-param> </filter> <filter-mapping> <filter-name>SamsungCardJsonFilter</filter-name> 
+		<url-pattern>/*</url-pattern> </filter-mapping>
+	 -->
+
+	<!-- 
+	<servlet>
+		<servlet-name>nppfs-install</servlet-name>
+		<jsp-file>/pluginfree/jsp/nppfs.install.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>nppfs-install</servlet-name>
+		<url-pattern>/nppfs.install.do/<url-pattern>
+	</servlet-mapping>
+	 -->
+
+</web-app>

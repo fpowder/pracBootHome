@@ -1,46 +1,46 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+  <meta charset="UTF-8">
+
+
+  <script type="text/javascript" src="/js/lib/jquery-1.9.1.min.js" ></script>
+
+<!--  <script type="text/javascript" src="/pluginfree/js/jquery-1.11.0.min.js"></script>-->
+  <script type="text/javascript" src="/pluginfree/js/nppfs-1.13.0.js"></script>
+  <script type="text/javascript" src="/pluginfree/js/nppfs.query-1.11.3.js"></script>
+
+  <script type="text/javascript" src="/js/lib/isaacCSPRNG/isaacCSPRNG-1.1.min.js"></script>
+  <script type="text/javascript" src="/js/lib/underscore.js"></script>
+  <script type="text/javascript" src="/js/lib/backbone-min.js"></script>
+  <script type="text/javascript" src="/js/lib/seedrandom.min.js"></script>
+  <script type="text/javascript" src="/js/index.js"></script>
+
+
+  <title>Title</title>
+
+
 </head>
-<script type="text/javascript" src="/js/lib/jquery-1.9.1.min.js" ></script>
-<script type="text/javascript" src="/js/lib/isaacCSPRNG/isaacCSPRNG-1.1.min.js" ></script>
-<script type="text/javascript" src="/js/lib/underscore.js" ></script>
-<script type="text/javascript" src="/js/lib/backbone-min.js" ></script>
-<script type="text/javascript" src="/js/lib/seedrandom.min.js" ></script>
-<script type="text/javascript" src="/js/index.js"></script>
+
+
 <script type="text/javascript">
-
-    $(function(){
-
-        var prng0 = isaacCSPRNG();
-        console.log('isaacCSPRNG random()');
-        console.log(isaacCSPRNG().random());
-
-        var min = 5;
-        var max = 10;
-
-        for(var i = 0; i < 5; i++){
-            console.log(_.random(min, max));
-        }
-
-        console.log(isaacCSPRNG().random());
-        console.log(isaacCSPRNG().random());
-        console.log(isaacCSPRNG().random());
-        console.log(isaacCSPRNG().random());
-        console.log(isaacCSPRNG().random());
-
-
-        console.log("Math.seedrandom() :" + Math.seedrandom("s"));
-
-        var today = new Date();
-        console.log(today.getTime());
-
-    });
-
+  jQuery(document).ready(function () {
+    console.log("NOS Start!!");
+    npPfsStartup(document.testform, true, true, true, true, "npkencrypt", "on");
+  });
 </script>
+
 <body>
-jesus!
+<form name="testform">
+  <p>
+    <strong>아이디</strong>
+    <input type="text" name="name" value="아이디 입력">
+  </p>
+  <p>
+    <strong>비밀번호</strong>
+    <input type="password" name="E2E_PASS_1" npkencrypt="on">
+  </p>
+</form>
+
 </body>
 </html>
