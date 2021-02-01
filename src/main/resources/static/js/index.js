@@ -5,4 +5,5 @@ $(function(){
     console.log(prng0.random());*/
 
     console.log('for commit');
+    console.log('test');
 });
