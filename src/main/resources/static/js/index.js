@@ -6,4 +6,6 @@ $(function(){
 
     console.log('for commit');
     console.log('test');
+    console.log('rebase');
+
 });
